@@ -1,0 +1,44 @@
+﻿site_name: OSH 知識庫
+site_description: 職業安全衛生文件站
+site_dir: site
+docs_dir: docs
+theme:
+  name: flatly
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - footnotes
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: "1-6"
+  - pymdownx.arithmatex:
+      inline_syntax: ["$", "$$"]
+  - pymdownx.tilde
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js
+  - https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js
+  - assets/js/math-render.js
+  - https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js
+  - assets/js/mermaid-init.js
+
+extra_css:
+  - https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css
+  - assets/css/style.css
+
+nav:
+  - 首頁: index.md
+  - 安全衛生管理員: 安全衛生管理員.md
+  - 作業: 作業.md
+  - 化學品: 化學品.md
+  - 指引 + CNS: "指引 + CNS.md"
+  - 機械設備: 機械設備.md
+  - 營造設施: 營造設施.md
+  - 計劃書: 計劃書.md
