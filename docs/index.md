@@ -23,3 +23,9 @@
 -   `docs/`: MkDocs 原始文件（含圖檔）。
 -   `python/`: Python 程式與輔助腳本。
 -   `site/`: MkDocs build 後的靜態網頁輸出。
+
+## 聯絡方式
+
+如有任何疑問，歡迎隨時來信與我聯繫。
+
+hankyu2018new@gmail.com

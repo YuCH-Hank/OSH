@@ -2,13 +2,20 @@
 site_description: 職業安全衛生文件站
 site_dir: site
 docs_dir: docs
+
 theme:
-  name: readthedocs
+  name: material
+  language: zh-TW
+  features:
+    - navigation.expand # 預設展開全部目錄（你要的）
+    - navigation.sections # 分段顯示（有層級更清楚）
+    - navigation.instant # 可選：點選更快（單頁切換感）
+    - navigation.tracking # 可選：網址跟著章節變化
+    - toc.follow # 可選：右側目錄跟著捲動
 
 markdown_extensions:
   - sane_lists
   - admonition
-  - codehilite
   - footnotes
   - tables
   - toc:
@@ -21,7 +28,7 @@ markdown_extensions:
       custom_fences:
         - name: mermaid
           class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
+          format: !!python/name:pymdownx.superfences.fence_div_format
 
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js
@@ -29,7 +36,6 @@ extra_javascript:
   - assets/js/math-render.js
   - https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js
   - assets/js/mermaid-init.js
-  - assets/js/nav-toggle.js
 
 extra_css:
   - https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css

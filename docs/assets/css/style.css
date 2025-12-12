@@ -4,6 +4,60 @@ body {
   line-height: 1.7;
 }
 
+/* Quotes: emphasize important notices */
+blockquote {
+  border-left: 4px solid #0a5dbb;
+  background: #f7fbff;
+  padding: 0.8rem 1rem;
+  margin: 1rem 0;
+  color: #1b3b5f;
+}
+blockquote p {
+  margin: 0.2rem 0;
+  white-space: pre-line;
+}
+
+/* Expand content width on Read the Docs theme */
+.wy-nav-content {
+  max-width: 1200px;
+}
+
+/* Keep sidebar navigation on the left (override previous right alignment) */
+.wy-grid-for-nav {
+  display: flex;
+  flex-direction: row;
+}
+.wy-nav-side {
+  left: 0;
+  right: auto;
+}
+.wy-nav-content-wrap {
+  margin-left: 300px;
+  margin-right: 0;
+}
+
+/* Keep navigation items expanded (no collapsing) */
+.toc-collapsed > ul {
+  display: block !important;
+}
+.toc-toggle {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .wy-grid-for-nav {
+    flex-direction: column;
+  }
+  .wy-nav-side {
+    position: static;
+    width: 100%;
+    right: auto;
+  }
+  .wy-nav-content-wrap {
+    margin-right: 0;
+  }
+}
+
 /* Highlight important markers */
 mark {
   background: #fff3b0;
@@ -33,28 +87,66 @@ h3 {
   color: #4a7fa8;
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
+  border-bottom: 1px solid #e0e6ed;
+  padding-bottom: 0.25rem;
 }
 h4 {
   color: #6a87a3;
   margin-top: 1.2rem;
   margin-bottom: 0.4rem;
+  border-bottom: 1px solid #e0e6ed;
+  padding-bottom: 0.2rem;
 }
 h5,
 h6 {
   color: #8191a4;
   margin-top: 1rem;
   margin-bottom: 0.35rem;
+  border-bottom: 1px solid #e0e6ed;
+  padding-bottom: 0.15rem;
 }
 
-/* Tables: clearer borders and header */
+/* =========================
+   Tables: center tables
+   ========================= */
+
+/* Center the whole table block */
+.wy-nav-content table {
+  width: auto;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Whole table */
+.wy-nav-content table {
+  font-size: 1.05em; /* 比正文大一點 */
+}
+
+/* Table header & cells */
+.wy-nav-content th,
+.wy-nav-content td {
+  font-size: 1.05em; /* 確保不被主題覆蓋 */
+  line-height: 1.6;
+}
+
+/* Header emphasis */
+.wy-nav-content th {
+  font-size: 1.08em; /* 標題再稍大 */
+}
+
+/* Table appearance */
 table {
   border-collapse: collapse;
-  width: 100%;
 }
 th,
 td {
   border: 1px solid #888;
   padding: 0.5rem 0.6rem;
+  /* Force-wrap long words/URLs to avoid overflow in tables */
+  word-break: break-all;
+  overflow-wrap: anywhere;
+  white-space: normal;
 }
 th {
   background: #f1f1f5;
@@ -100,4 +192,48 @@ code {
 }
 .toc-toggle:hover {
   color: #b30000;
+}
+/* =========================
+   Inline code (`...`) tweaks
+   ========================= */
+
+/* Inline code only (exclude code blocks) */
+:not(pre) > code {
+  font-size: 1em !important; /* 不縮小，與正文同字級 */
+  font-family: Consolas, Monaco, "Courier New", monospace;
+  background: #fff4e5 !important; /* 淡橘底，適合「重點提示」 */
+  color: #b30000 !important; /* 與你 strong 顏色一致 */
+  padding: 0.15em 0.35em !important;
+  border-radius: 4px !important;
+  border: 1px solid #ffd6a5 !important;
+  vertical-align: baseline !important;
+}
+
+/* Inline code inside headings（避免太突兀） */
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code {
+  background: #fff0f0;
+  color: #8b0000;
+  border-color: #f2b8b8;
+}
+
+/* Inline code inside links */
+a code {
+  color: #0a5dbb;
+  background: #eef5ff;
+  border-color: #c7dbf5;
+}
+
+/* =========================
+   Code blocks (```), keep original size
+   ========================= */
+
+pre code {
+  font-size: 0.95em; /* block 稍微小一點 OK */
+  color: inherit;
+  background: transparent;
 }
