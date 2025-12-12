@@ -3,9 +3,10 @@ site_description: 職業安全衛生文件站
 site_dir: site
 docs_dir: docs
 theme:
-  name: flatly
+  name: readthedocs
 
 markdown_extensions:
+  - sane_lists
   - admonition
   - codehilite
   - footnotes
@@ -28,6 +29,7 @@ extra_javascript:
   - assets/js/math-render.js
   - https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js
   - assets/js/mermaid-init.js
+  - assets/js/nav-toggle.js
 
 extra_css:
   - https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css
