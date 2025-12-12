@@ -20,7 +20,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # 取得 GitHub Pages 的 base_url（例如 https://<user>.github.io/<repo>/）
       - name: Configure Pages
         id: pages
         uses: actions/configure-pages@v5
@@ -34,10 +33,9 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      # mkdocs.yml 已設定 site_dir: site，所以不用另外 -d
-      # 但建議補上 --site-url，讓部署在 /<repo>/ 時資源路徑正確
+      # mkdocs.yml already sets site_dir: site so the default output path works.
       - name: Build MkDocs
-        run: mkdocs build --clean --site-url "${{ steps.pages.outputs.base_url }}/"
+        run: mkdocs build --clean
 
       - uses: actions/upload-pages-artifact@v3
         with:

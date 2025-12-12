@@ -1,5 +1,6 @@
-﻿site_name: OSH 知識庫
+site_name: OSH 知識庫
 site_description: 職業安全衛生文件站
+site_url: https://yuch-hank.github.io/OSH/
 site_dir: site
 docs_dir: docs
 
