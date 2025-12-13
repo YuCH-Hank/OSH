@@ -13,8 +13,12 @@ theme:
     - navigation.instant # 可選：點選更快（單頁切換感）
     - navigation.tracking # 可選：網址跟著章節變化
     - toc.follow # 可選：右側目錄跟著捲動
+    - content.footnote.tooltips
 
 markdown_extensions:
+  - attr_list
+  - md_in_html
+  - pymdownx.blocks.caption
   - sane_lists
   - admonition
   - footnotes

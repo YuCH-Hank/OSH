@@ -147,6 +147,7 @@ td {
   word-break: break-all;
   overflow-wrap: anywhere;
   white-space: normal;
+  font-size: 1.08em;
 }
 th {
   background: #f1f1f5;
@@ -199,9 +200,9 @@ code {
 
 /* Inline code only (exclude code blocks) */
 :not(pre) > code {
-  font-size: 1em !important; /* 不縮小，與正文同字級 */
+  font-size: 1em !important; /* 不縮小, 與正文同字級 */
   font-family: Consolas, Monaco, "Courier New", monospace;
-  background: #fff4e5 !important; /* 淡橘底，適合「重點提示」 */
+  background: #fff4e5 !important; /* 淡橘底, 適合「重點提示」 */
   color: #b30000 !important; /* 與你 strong 顏色一致 */
   padding: 0.15em 0.35em !important;
   border-radius: 4px !important;

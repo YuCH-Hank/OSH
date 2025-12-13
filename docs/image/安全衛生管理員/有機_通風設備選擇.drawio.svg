@@ -238,14 +238,14 @@
                                         儲槽
                                     </span>
                                     <span style="color: light-dark(rgb(0, 0, 0), rgb(237, 237, 237)); font-size: medium; text-align: start; text-indent: -48px; background-color: light-dark(rgb(249, 251, 251), rgb(20, 22, 22));">
-                                        無發散有機溶劑蒸氣之虞者，不在此限
+                                        無發散有機溶劑蒸氣之虞者, 不在此限
                                     </span>
                                 </div>
                             </div>
                         </div>
                     </foreignObject>
                     <text x="190" y="234" fill="light-dark(#000000, #ffffff)" font-family="&quot;Lucida Console&quot;" font-size="12px" text-anchor="middle">
-                        儲槽無發散有機溶劑蒸氣之虞者，不在此限
+                        儲槽無發散有機溶劑蒸氣之虞者, 不在此限
                     </text>
                 </switch>
             </g>

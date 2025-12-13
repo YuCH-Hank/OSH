@@ -10,7 +10,7 @@ MkDocs 驅動的職業安全衛生文件站點。使用 Python 3.11。
 
 ## 快速開始
 
-1. 建議使用 Python 3.11，安裝套件：`pip install -r requirements.txt`
+1. 建議使用 Python 3.11, 安裝套件：`pip install -r requirements.txt`
 2. 本地預覽：`mkdocs serve`
 3. 輸出靜態站點：`mkdocs build`
 
