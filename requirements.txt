@@ -3,4 +3,3 @@ click==8.2.1
 mkdocs-material==9.5.34
 pymdown-extensions==10.19
 mkdocs-bootswatch==1.1
-pymdown-extensions==10.19
