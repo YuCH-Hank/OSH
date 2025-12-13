@@ -2,10 +2,10 @@
   function renderMath() {
     if (typeof renderMathInElement === "undefined") return;
 
-    const content = document.querySelector(".md-content");
-    if (!content) return;
+    const scope = document.querySelector(".md-content");
+    if (!scope) return;
 
-    renderMathInElement(content, {
+    renderMathInElement(scope, {
       delimiters: [
         { left: "$$", right: "$$", display: true },
         { left: "$", right: "$", display: false },
@@ -17,7 +17,7 @@
   // 初次載入
   document.addEventListener("DOMContentLoaded", renderMath);
 
-  // Material 的 instant navigation：每次換頁都要重跑
+  // Material instant navigation：每次換頁都要重跑
   if (window.document$ && typeof window.document$.subscribe === "function") {
     window.document$.subscribe(() => {
       renderMath();
