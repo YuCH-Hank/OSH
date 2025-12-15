@@ -8,12 +8,15 @@ body {
 blockquote {
   border-left: 4px solid #0a5dbb;
   background: #f7fbff;
-  padding: 0.8rem 1rem;
-  margin: 1rem 0;
+  padding: 0.2rem 0.3rem !important;
+  margin: 0rem 0 !important;
   color: #1b3b5f;
+  font-size: 0.8em !important;
+  line-height: 1.45 !important;
 }
 blockquote p {
-  margin: 0.2rem 0;
+  margin: 0.1rem 0;
+  line-height: inherit;
   white-space: pre-line;
 }
 
@@ -141,13 +144,13 @@ table {
 }
 th,
 td {
-  border: 1px solid #888;
-  padding: 0.5rem 0.6rem;
+  border: 1px solid #888 !important;
+  padding: 0.35rem 0.45rem !important;
   /* Force-wrap long words/URLs to avoid overflow in tables */
-  word-break: break-all;
-  overflow-wrap: anywhere;
-  white-space: normal;
-  font-size: 1.08em;
+  word-break: break-all !important;
+  overflow-wrap: anywhere !important;
+  white-space: normal !important;
+  font-size: 1em !important;
 }
 th {
   background: #f1f1f5;
