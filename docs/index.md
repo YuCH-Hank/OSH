@@ -19,7 +19,7 @@
 
 1. 使用 Python 3.11, 先執行 `pip install -r requirements.txt` 安裝 MkDocs。
 2. 以 `mkdocs serve` 本地預覽, 瀏覽器開啟 http://127.0.0.1:8000/。
-3. 以 `mkdocs build` 產生靜態網站輸出到 `site/` 目錄。
+3. 以 `mkdocs build --clean --strict` 產生靜態網站輸出到 `site/` 目錄，確保連結與導航正確。
 
 ## 結構
 

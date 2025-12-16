@@ -1,17 +1,19 @@
 # OSH
 
-MkDocs å°ˆæ¡ˆï¼Œå½™æ•´è·æ¥­å®‰å…¨è¡›ç”Ÿç­†è¨˜èˆ‡åœ–ç¤ºï¼Œä½¿ç”¨ Python 3.11ã€‚
+Â¾·~¦w¥ş½Ã¥Í¡]OSH¡^ª¾ÃÑ®w¡A¨Ï¥Î MkDocs Material ²£¥ÍÀRºAºô¯¸¡C
 
-## å°ˆæ¡ˆçµæ§‹
+## ±M®×µ²ºc
 
--   `docs/`ï¼šMarkdown åŸå§‹æª”èˆ‡æ’åœ–ï¼ˆMkDocs ä¾†æºè³‡æ–™ï¼‰ã€‚
--   `python/`ï¼šPython ç¨‹å¼èˆ‡ç›¸é—œè…³æœ¬ã€‚
--   `site/`ï¼š`mkdocs build` çš„éœæ…‹ç¶²ç«™è¼¸å‡ºï¼ˆç‰ˆæœ¬ç®¡æ§å·²å¿½ç•¥ï¼‰ã€‚
+-   `docs/`¡GMarkdown ­ì©l¤å¥ó»P¹ÏÀÉ¡]MkDocs ªº¸ê®Æ¨Ó·½¡^
+-   `python/`¡GPython µ{¦¡»P»²§U¸}¥»
+-   `site/`¡G`mkdocs build` ²£¥XªºÀRºAºô¯¸¡]¤w¦b .gitignore ±Æ°£¡^
 
-## å¿«é€Ÿé–‹å§‹
+## ¶}µo»P½sÄ¶
 
-1. å»ºè­°ä½¿ç”¨ Python 3.11ï¼Œå®‰è£å¥—ä»¶ï¼š`pip install -r requirements.txt`
-2. æœ¬åœ°é è¦½ï¼š`mkdocs serve`ï¼Œç€è¦½ http://127.0.0.1:8000/
-3. åŒ¯å‡ºéœæ…‹ç¶²ç«™ï¼š`mkdocs build`
+1. ±ÀÂË Python 3.11¡A¦w¸Ë®M¥ó¡G`pip install -r requirements.txt`
+2. ¥»¦a¹wÄı¡G`mkdocs serve`¡AÂsÄı http://127.0.0.1:8000/
+3. ¥¿¦¡¿é¥X¡G`mkdocs build --clean --strict`
 
-å®Œæ•´æ–‡ä»¶ç´¢å¼•è«‹è¦‹ `docs/index.md`ã€‚
+## ¨ä¥L
+
+§¹¾ã¤å¥ó²M³æ½Ğ¨£ `docs/index.md`¡C

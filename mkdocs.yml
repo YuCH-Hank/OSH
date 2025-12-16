@@ -1,5 +1,5 @@
-site_name: OSH 知識庫
-site_description: 職業安全衛生文件站
+site_name: OSH 職業安全衛生
+site_description: 職業安全衛生文件集
 site_url: https://yuch-hank.github.io/OSH/
 site_dir: site
 docs_dir: docs
@@ -8,11 +8,11 @@ theme:
   name: material
   language: zh-TW
   features:
-    - navigation.expand # 預設展開全部目錄（你要的）
-    - navigation.sections # 分段顯示（有層級更清楚）
-    - navigation.instant # 可選：點選更快（單頁切換感）
-    - navigation.tracking # 可選：網址跟著章節變化
-    - toc.follow # 可選：右側目錄跟著捲動
+    - navigation.expand
+    - navigation.sections
+    - navigation.instant
+    - navigation.tracking
+    - toc.follow
     - content.footnote.tooltips
 
 markdown_extensions:
@@ -50,10 +50,13 @@ extra_css:
 nav:
   - 首頁: index.md
   - 安全衛生管理員: 安全衛生管理員.md
+  - 職業安全管理單位: 職業安全管理單位.md
   - 作業: 作業.md
   - 化學品: 化學品.md
-  - 指引 + CNS: "指引 + CNS.md"
+  - 物理性危害: 物理性危害.md
+  - 指引 + CNS: 指引 + CNS.md
   - 機械設備: 機械設備.md
   - 營造設施: 營造設施.md
   - 計劃書: 計劃書.md
   - 分級管理: 分級管理.md
+  - TODO: ToDo.md
