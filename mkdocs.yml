@@ -6,6 +6,8 @@ docs_dir: docs
 
 theme:
   name: material
+  logo: assets/image.png
+  favicon: assets/image.png
   language: zh-TW
   features:
     - navigation.expand

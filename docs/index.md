@@ -1,6 +1,11 @@
-﻿# OSH 知識庫
+﻿---
+title: OSH 知識庫
+image: assets/image.png
+---
 
-這裡彙整職業安全衛生相關的文件與圖示, 並以 MkDocs 發佈為靜態網站。
+# OSH 知識庫
+
+這裡彙整職業安全衛生相關的文件與圖示，並以 MkDocs 發佈為靜態網站。
 
 ## 文件列表
 
@@ -17,20 +22,20 @@
 
 ## 使用方式
 
-1. 使用 Python 3.11, 先執行 `pip install -r requirements.txt` 安裝 MkDocs。
-2. 以 `mkdocs serve` 本地預覽, 瀏覽器開啟 http://127.0.0.1:8000/。
+1. 使用 Python 3.11，先執行 `pip install -r requirements.txt` 安裝 MkDocs。
+2. 以 `mkdocs serve` 本地預覽，瀏覽器開啟 http://127.0.0.1:8000/。
 3. 以 `mkdocs build --clean --strict` 產生靜態網站輸出到 `site/` 目錄，確保連結與導航正確。
 
 ## 結構
 
--   `docs/`: MkDocs 原始文件（含圖檔）。
--   `python/`: Python 程式與輔助腳本。
--   `site/`: MkDocs build 後的靜態網頁輸出。
+-   `docs/`：MkDocs 原始文件（含圖檔）。
+-   `python/`：Python 程式與輔助腳本。
+-   `site/`：MkDocs build 後的靜態網頁輸出。
 
 ## [TODO](ToDo.md)
 
 ## 聯絡方式
 
-如有任何疑問, 歡迎隨時來信與我聯繫。
+如有任何疑問，歡迎隨時來信與我聯繫。
 
 hankyu2018new@gmail.com
