@@ -11,10 +11,12 @@ theme:
   language: zh-TW
   features:
     - navigation.expand
-    - navigation.sections
     - navigation.instant
     - navigation.tracking
+    - navigation.prune
+    - navigation.path
     - toc.follow
+    - toc.integrate
     - content.footnote.tooltips
 
 markdown_extensions:
@@ -52,13 +54,20 @@ extra_css:
 nav:
   - 首頁: index.md
   - 安全衛生管理員: 安全衛生管理員.md
-  - 職業安全管理單位: 職業安全管理單位.md
-  - 作業: 作業.md
-  - 化學品: 化學品.md
-  - 物理性危害: 物理性危害.md
-  - 指引 + CNS: 指引 + CNS.md
+  - 安全衛生組織: 安全衛生組織.md
+  - 作業:
+      - 作業: 作業/作業.md
+      - 局限空間作業: 作業/局限空間作業.md
+  - 危害:
+      - 危害: 危害/危害.md
+      - 化學品: 危害/化學品.md
+      - 物理性危害: 危害/物理性危害.md
+  - 職災補償: 職災補償.md
   - 機械設備: 機械設備.md
   - 營造設施: 營造設施.md
   - 計劃書: 計劃書.md
   - 分級管理: 分級管理.md
+  - 指引 + CNS: 指引 + CNS.md
+  - 法規參考連結: 法規參考連結.md
+  - 通報/備查: 通報_備查.md
   - TODO: ToDo.md

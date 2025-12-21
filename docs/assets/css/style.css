@@ -1,23 +1,16 @@
-﻿/* Base text tweaks */
+﻿/* =========================================================
+   MkDocs / Read the Docs – One CSS (based on your heading palette)
+   Includes:
+   1) TOC / sidebar current section highlight
+   2) h1~h6 all have underline rules
+   3) headings are NOT black (use your colors)
+   4) code blocks reduced height (tighter + max-height + scroll)
+   ========================================================= */
+
+/* ---------- Base text tweaks ---------- */
 body {
   font-size: 16px;
   line-height: 1.7;
-}
-
-/* Quotes: emphasize important notices */
-blockquote {
-  border-left: 4px solid #0a5dbb;
-  background: #f7fbff;
-  padding: 0.2rem 0.3rem !important;
-  margin: 0rem 0 !important;
-  color: #1b3b5f;
-  font-size: 0.8em !important;
-  line-height: 1.45 !important;
-}
-blockquote p {
-  margin: 0.1rem 0;
-  line-height: inherit;
-  white-space: pre-line;
 }
 
 /* Expand content width on Read the Docs theme */
@@ -25,7 +18,7 @@ blockquote p {
   max-width: 1200px;
 }
 
-/* Keep sidebar navigation on the left (override previous right alignment) */
+/* Keep sidebar navigation on the left */
 .wy-grid-for-nav {
   display: flex;
   flex-direction: row;
@@ -39,15 +32,158 @@ blockquote p {
   margin-right: 0;
 }
 
-/* Keep navigation items expanded (no collapsing) */
-.toc-collapsed > ul {
-  display: block !important;
-}
-.toc-toggle {
-  display: none;
+/* =========================================================
+   1) TOC / Navigation reading guidance (current section highlight)
+   ========================================================= */
+
+/* Sidebar: current page/section */
+.wy-menu-vertical li.current > a,
+.wy-menu-vertical li.current > a:visited {
+  color: #0a5dbb !important;
+  font-weight: 700;
+  background: rgba(10, 93, 187, 0.12) !important;
+  border-left: 4px solid #0a5dbb;
+  padding-left: 12px !important;
 }
 
-@media screen and (max-width: 768px) {
+/* Sidebar: current branch background */
+.wy-menu-vertical li.current {
+  background: rgba(10, 93, 187, 0.05) !important;
+}
+
+/* Sidebar: hover feedback */
+.wy-menu-vertical a:hover {
+  background: rgba(10, 93, 187, 0.08) !important;
+}
+
+/* In-page TOC (if theme renders a .toc block) */
+.wy-nav-content .toc li a:hover {
+  color: #0a5dbb !important;
+}
+.wy-nav-content .toc li.current > a,
+.wy-nav-content .toc li a.current {
+  color: #0a5dbb !important;
+  font-weight: 700;
+  border-left: 3px solid #0a5dbb;
+  padding-left: 0.55rem;
+  background: rgba(10, 93, 187, 0.1);
+  border-radius: 8px;
+}
+
+/* =========================================================
+   2) + 3) Headings (use your colors + underline for each level)
+   ========================================================= */
+
+/* Headings */
+.wy-nav-content h1 {
+  color: #0a5dbb !important;
+  padding-bottom: 0.4rem;
+  margin-top: 1.1rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #0a5dbb;
+  line-height: 1.25;
+}
+.wy-nav-content h2 {
+  color: #2f82c6 !important;
+  margin-top: 2rem;
+  margin-bottom: 0.6rem;
+  border-bottom: 1px solid #d0e2f5;
+  padding-bottom: 0.25rem;
+  line-height: 1.25;
+}
+.wy-nav-content h3 {
+  color: #4a7fa8 !important;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid #e0e6ed;
+  padding-bottom: 0.25rem;
+  line-height: 1.25;
+}
+.wy-nav-content h4 {
+  color: #6a87a3 !important;
+  margin-top: 1.2rem;
+  margin-bottom: 0.4rem;
+  border-bottom: 1px solid #e0e6ed;
+  padding-bottom: 0.2rem;
+  line-height: 1.25;
+}
+.wy-nav-content h5,
+.wy-nav-content h6 {
+  color: #8191a4 !important;
+  margin-top: 1rem;
+  margin-bottom: 0.35rem;
+  border-bottom: 1px solid #e0e6ed;
+  padding-bottom: 0.15rem;
+  line-height: 1.25;
+}
+
+/* Anchor jump comfort */
+.wy-nav-content h1,
+.wy-nav-content h2,
+.wy-nav-content h3,
+.wy-nav-content h4,
+.wy-nav-content h5,
+.wy-nav-content h6 {
+  scroll-margin-top: 90px;
+}
+
+/* =========================================================
+   4) Code blocks too tall -> compact + capped height + scroll
+   ========================================================= */
+
+/* Block code wrappers used by RTD/MkDocs */
+.wy-nav-content pre,
+.wy-nav-content .highlight pre {
+  font-size: 0.85em !important;
+  line-height: 1.4 !important;
+  padding: 0.55rem 0.75rem !important;
+  margin: 0.6rem 0 !important;
+
+  /* Reduce perceived "big box" */
+  border-radius: 10px;
+  border: 1px solid rgba(180, 190, 205, 0.55);
+
+  /* Key: prevent super tall blocks */
+  max-height: 26rem;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Avoid double padding inside code blocks */
+.wy-nav-content pre code {
+  padding: 0 !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+}
+
+/* Inline code (keep readable, not shrinking) */
+:not(pre) > code {
+  font-size: 1em !important;
+  font-family: Consolas, Monaco, "Courier New", monospace;
+  background: #fff4e5 !important;
+  color: #b30000 !important;
+  padding: 0.15em 0.35em !important;
+  border-radius: 4px !important;
+  border: 1px solid #ffd6a5 !important;
+  vertical-align: baseline !important;
+}
+
+/* Inline code inside headings: less loud */
+.wy-nav-content h1 code,
+.wy-nav-content h2 code,
+.wy-nav-content h3 code,
+.wy-nav-content h4 code,
+.wy-nav-content h5 code,
+.wy-nav-content h6 code {
+  background: #f3f4f6 !important;
+  color: #374151 !important;
+  border-color: #e5e7eb !important;
+}
+
+/* =========================================================
+   Mobile fixes: sidebar + content margins
+   ========================================================= */
+@media screen and (max-width: 820px) {
   .wy-grid-for-nav {
     flex-direction: column;
   }
@@ -57,19 +193,22 @@ blockquote p {
     right: auto;
   }
   .wy-nav-content-wrap {
+    margin-left: 0;
     margin-right: 0;
   }
-}
 
-/* Highlight important markers */
-mark {
-  background: #fff3b0;
-  color: inherit;
-  padding: 0 0.2em;
-  border-radius: 2px;
-}
-strong {
-  color: #b30000;
+  /* Slightly tighter code blocks on mobile */
+  .wy-nav-content pre,
+  .wy-nav-content .highlight pre {
+    font-size: 0.82em !important;
+    padding: 0.5rem 0.65rem !important;
+    max-height: 20rem;
+  }
+
+  /* Slightly tighter current highlight padding */
+  .wy-menu-vertical li.current > a {
+    padding-left: 10px !important;
+  }
 }
 
 /* Headings */
@@ -109,139 +248,43 @@ h6 {
   padding-bottom: 0.15rem;
 }
 
-/* =========================
-   Tables: center tables
-   ========================= */
+strong {
+  color: #db7777;
+  font-weight: 700;
+  white-space: nowrap;
+}
 
-/* Center the whole table block */
-.wy-nav-content table {
-  width: auto;
-  max-width: 100%;
+strong::before,
+strong::after {
+  content: "\00a0"; /* 不換行空白 */
+}
+
+/* =========================================================
+   Center Mermaid diagrams (MkDocs Material)
+   ========================================================= */
+
+/* Center the SVG itself */
+.md-content .mermaid svg {
+  display: block;
   margin-left: auto;
   margin-right: auto;
-  table-layout: auto;
 }
 
-/* Whole table */
-.wy-nav-content table {
-  font-size: 1.05em; /* 比正文大一點 */
+.md-content .mermaid {
+  margin: 1.2rem auto;
 }
 
-/* Table header & cells */
-.wy-nav-content th,
-.wy-nav-content td {
-  font-size: 1.05em; /* 確保不被主題覆蓋 */
-  line-height: 1.6;
+.md-content .mermaid svg {
+  display: block;
+  margin: 0 auto;
 }
 
-/* Header emphasis */
-.wy-nav-content th {
-  font-size: 1.08em; /* 標題再稍大 */
-}
+@media screen and (max-width: 768px) {
+  .md-content .mermaid {
+    overflow-x: auto;
+  }
 
-/* Table appearance */
-table {
-  border-collapse: collapse;
-  table-layout: auto;
-}
-th,
-td {
-  border: 1px solid #888 !important;
-  padding: 0.35rem 0.45rem !important;
-  /* Force-wrap long words/URLs to avoid overflow in tables */
-  word-break: break-all !important;
-  overflow-wrap: anywhere !important;
-  white-space: normal !important;
-  font-size: 1em !important;
-  min-width: 0 !important; /* allow cells to shrink to content */
-  width: auto !important;
-}
-th {
-  background: #f1f1f5;
-  font-weight: 700;
-}
-tr:nth-child(even) td {
-  background: #fafafa;
-}
-
-/* Code blocks and inline code */
-code {
-  background: #f6f8fa;
-  padding: 0.1em 0.3em;
-  border-radius: 3px;
-}
-pre code {
-  background: transparent;
-  padding: 0;
-}
-pre,
-code {
-  tab-size: 4;
-  -moz-tab-size: 4;
-}
-
-/* Mermaid container spacing */
-.mermaid {
-  margin: 1rem 0;
-}
-
-/* Collapsible TOC/nav toggles */
-.toc-toggle {
-  border: none;
-  background: transparent;
-  color: #444;
-  cursor: pointer;
-  margin-right: 0.35rem;
-  font-size: 0.85rem;
-  padding: 0;
-}
-.toc-collapsed > ul {
-  display: none;
-}
-.toc-toggle:hover {
-  color: #b30000;
-}
-/* =========================
-   Inline code (`...`) tweaks
-   ========================= */
-
-/* Inline code only (exclude code blocks) */
-:not(pre) > code {
-  font-size: 1em !important; /* 不縮小, 與正文同字級 */
-  font-family: Consolas, Monaco, "Courier New", monospace;
-  background: #fff4e5 !important; /* 淡橘底, 適合「重點提示」 */
-  color: #b30000 !important; /* 與你 strong 顏色一致 */
-  padding: 0.15em 0.35em !important;
-  border-radius: 4px !important;
-  border: 1px solid #ffd6a5 !important;
-  vertical-align: baseline !important;
-}
-
-/* Inline code inside headings（避免太突兀） */
-h1 code,
-h2 code,
-h3 code,
-h4 code,
-h5 code,
-h6 code {
-  background: #fff0f0;
-  color: #8b0000;
-  border-color: #f2b8b8;
-}
-
-/* Inline code inside links */
-a code {
-  color: #0a5dbb;
-  background: #eef5ff;
-  border-color: #c7dbf5;
-}
-
-/* =========================
-   Code blocks (```), keep original size
-   ========================= */
-
-pre code {
-  font-size: 0.95em; /* block 稍微小一點 OK */
-  color: inherit;
-  background: transparent;
+  .md-content .mermaid svg {
+    margin-left: 0;
+  }
 }
