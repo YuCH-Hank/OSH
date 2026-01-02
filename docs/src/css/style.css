@@ -70,6 +70,8 @@ body {
   border-radius: 8px;
 }
 
+
+
 /* =========================================================
    2) + 3) Headings (use your colors + underline for each level)
    ========================================================= */
@@ -289,22 +291,75 @@ strong::after {
   }
 }
 
-/* 左側 TOC：目前章節文字顏色 */
+
+/* =========================================================
+   1) Sidebar / TOC highlight (Material)
+   ========================================================= */
+
+/* ---------- 1-1) Active link (目前頁) ---------- */
 .md-nav__item--active > .md-nav__link,
 .md-nav__item--active > .md-nav__link .md-ellipsis {
-  color: #0a5dbb !important; /* ← 你要的顏色 */
-  font-weight: 700;
-}
-.md-nav--secondary .md-nav__item--active > .md-nav__link {
   color: #0a5dbb !important;
-  font-weight: 700;
+  font-weight: 700 !important;
 }
+
 .md-nav__item--active > .md-nav__link {
-  background: rgba(10, 93, 187, 0.1);
+  background: rgba(10, 93, 187, 0.14);
   border-left: 4px solid #0a5dbb;
   padding-left: 0.6rem;
   border-radius: 6px;
 }
+
+/* ---------- 1-2) Active 的祖先路徑（展開中的父層） ----------
+   Material 的巢狀節點展開通常是 input:checked + label 這個結構 */
+.md-nav__item--nested > input:checked + label.md-nav__link {
+  background: rgba(10, 93, 187, 0.08);
+  border-left: 4px solid rgba(10, 93, 187, 0.55);
+  padding-left: 0.6rem;
+  border-radius: 6px;
+  font-weight: 600;
+  color: #0a5dbb !important;
+}
+
+/* ---------- 1-3) 同層清單內全部都淡底色（不論 active 在第幾個） ----------
+   用 :has() 抓到「這個 ul 裡面有 active」 => 把該 ul 內所有 item 都上淡底色 */
+.md-nav__list:has(> .md-nav__item--active) > .md-nav__item > .md-nav__link {
+  background: rgba(10, 93, 187, 0.04);
+  padding-left: 0.6rem;
+  border-radius: 6px;
+}
+
+/* 讓 active 的深色不要被上一條淡色覆蓋 */
+.md-nav__list:has(> .md-nav__item--active)
+  > .md-nav__item--active
+  > .md-nav__link {
+  background: rgba(10, 93, 187, 0.14);
+  border-left: 4px solid #0a5dbb;
+}
+
+/* ---------- 1-4) hover feedback（不要蓋掉 active） ---------- */
+.md-nav__link:hover {
+  background: rgba(10, 93, 187, 0.08);
+  border-radius: 6px;
+}
+.md-nav__item--active > .md-nav__link:hover {
+  background: rgba(10, 93, 187, 0.14);
+}
+
+/* ---------- 1-5) Secondary TOC (右側) active ---------- */
+.md-nav--secondary .md-nav__item--active > .md-nav__link,
+.md-nav--secondary .md-nav__item--active > .md-nav__link .md-ellipsis {
+  color: #0a5dbb !important;
+  font-weight: 600 !important;
+}
+
+/* 右側 TOC 字體縮小（你原本有這段） */
+.md-nav--secondary .md-nav__link,
+.md-nav--secondary .md-nav__link .md-ellipsis {
+  font-size: 0.55rem;
+  line-height: 1.45;
+}
+
 
 /* =========================================
    MkDocs Material - Table polish
@@ -384,4 +439,14 @@ strong::after {
 /* 標題列更凸顯：底線加粗 */
 .md-typeset__table table thead th {
   border-bottom: 2px solid rgba(10, 93, 187, 0.35);
+}
+
+/* =========================================
+   MkDocs Material - 右側 / 次層 TOC 字體縮小
+   ========================================= */
+
+.md-nav--secondary .md-nav__link,
+.md-nav--secondary .md-nav__link .md-ellipsis {
+  font-size: 0.55rem;   /* 原本約 0.9~1rem */
+  line-height: 1.45;
 }
