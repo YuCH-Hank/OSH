@@ -288,3 +288,100 @@ strong::after {
     margin-left: 0;
   }
 }
+
+/* 左側 TOC：目前章節文字顏色 */
+.md-nav__item--active > .md-nav__link,
+.md-nav__item--active > .md-nav__link .md-ellipsis {
+  color: #0a5dbb !important; /* ← 你要的顏色 */
+  font-weight: 700;
+}
+.md-nav--secondary .md-nav__item--active > .md-nav__link {
+  color: #0a5dbb !important;
+  font-weight: 700;
+}
+.md-nav__item--active > .md-nav__link {
+  background: rgba(10, 93, 187, 0.1);
+  border-left: 4px solid #0a5dbb;
+  padding-left: 0.6rem;
+  border-radius: 6px;
+}
+
+/* =========================================
+   MkDocs Material - Table polish
+   1) 文字不要離邊線太遠（縮小 padding）
+   2) 交錯底色 + 標題列凸顯
+   ========================================= */
+
+/* 表格整體：邊框更一致、不要太鬆 */
+.md-typeset__table table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+/* 1) 文字離邊線不要太遠：調小 td/th padding */
+.md-typeset__table table th,
+.md-typeset__table table td {
+  padding: 0.45rem 0.3rem !important; /* ← 想更緊就再降，如 0.35rem 0.5rem */
+  vertical-align: top;
+  line-height: 1.55 !important;
+}
+
+/* 表格框線（可選，但通常會更清楚） */
+.md-typeset__table table th,
+.md-typeset__table table td {
+  border: 1px solid rgba(180, 190, 205, 0.55);
+}
+
+/* 2) 標題列凸顯：背景 + 字重 + 置頂 */
+.md-typeset__table table thead th {
+  font-weight: 800;
+  color: #0a5dbb;
+  background: rgba(10, 93, 187, 0.1);
+  position: sticky; /* 長表格捲動時標題列固定（你有 scrollwrap 很適合） */
+  top: 0;
+  z-index: 2;
+}
+
+/* 2) 每一行交錯底色（zebra） */
+.md-typeset__table table tbody tr:nth-child(odd) td {
+  background: rgba(10, 93, 187, 0.04);
+}
+.md-typeset__table table tbody tr:nth-child(even) td {
+  background: rgba(10, 93, 187, 0);
+}
+
+/* hover 時整列更好讀（可選） */
+.md-typeset__table table tbody tr:hover td {
+  background: rgba(47, 130, 198, 0.1);
+}
+
+/* 若你不想讓某些表格太寬時左右留白太多，可把 scroll 區域邊距縮小 */
+.md-typeset__scrollwrap {
+  margin: 0.8rem 0;
+}
+
+/* 真正有效的 <br> 間距調整（不會被 Material 吃掉） */
+.md-typeset__table td br {
+  display: block;
+  line-height: 0;
+}
+
+.md-typeset__table td br::after {
+  content: "";
+  display: block;
+  height: 0.5em; /* 這個就是「<br> 的間距」 */
+}
+/* 避免最後一個 <br> 造成多餘底部空白 */
+.md-typeset__table td br:last-child::after {
+  height: 0;
+}
+
+/* <br> 間距微調（更自然） */
+.md-typeset__table td br::after {
+  height: 0.6em; /* 0.35~0.6 自行調 */
+}
+
+/* 標題列更凸顯：底線加粗 */
+.md-typeset__table table thead th {
+  border-bottom: 2px solid rgba(10, 93, 187, 0.35);
+}

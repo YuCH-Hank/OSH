@@ -15,7 +15,7 @@ theme:
     - navigation.tracking
     - navigation.prune
     - navigation.path
-    - toc.follow
+    # - toc.follow
     - toc.integrate
     - content.footnote.tooltips
 
@@ -29,7 +29,7 @@ markdown_extensions:
   - tables
   - toc:
       permalink: true
-      toc_depth: "1-6"
+      toc_depth: "1-3"
   - pymdownx.arithmatex:
       generic: true
       inline_syntax: ["$", "$$"]
