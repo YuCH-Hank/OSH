@@ -448,3 +448,32 @@ strong::after {
   font-size: 0.55rem; /* 原本約 0.9~1rem */
   line-height: 1.45;
 }
+
+/* ================================
+   Table - 更緊湊 + 依內容收縮
+   放在 Table 區塊最後面覆蓋用
+   ================================ */
+/* === 讓表格邊線真正貼近文字（不改字體、不改行高） === */
+.md-typeset__table th,
+.md-typeset__table td {
+  padding: 0.25rem 0.35rem !important; /* 真正縮的是這裡 */
+}
+
+/* 移除 Material 內部對段落加的隱性空白 */
+.md-typeset__table td > p,
+.md-typeset__table th > p {
+  margin: 0 !important;
+}
+
+/* 避免 ul / ol 在 cell 內撐出多餘上下空間 */
+.md-typeset__table td > ul,
+.md-typeset__table td > ol {
+  margin: 0 !important;
+  padding-left: 1.1em; /* 保留縮排，但不撐高 */
+}
+
+/* 讓多行文字貼近上下邊線 */
+.md-typeset__table td,
+.md-typeset__table th {
+  vertical-align: middle;
+}
