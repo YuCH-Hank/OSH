@@ -15,9 +15,11 @@ theme:
     - navigation.tracking
     - navigation.prune
     - navigation.path
-    # - toc.follow
+    - toc.follow
     - toc.integrate
     - content.footnote.tooltips
+  icon:
+    annotation: material/plus-circle
 
 markdown_extensions:
   - attr_list
@@ -46,6 +48,8 @@ extra_javascript:
   - src/js/math-render.js
   - https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js
   - src/js/mermaid-init.js
+  - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
+  - src/js/tablesort.js
 
 extra_css:
   - https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css
