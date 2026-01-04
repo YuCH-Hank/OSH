@@ -70,8 +70,6 @@ body {
   border-radius: 8px;
 }
 
-
-
 /* =========================================================
    2) + 3) Headings (use your colors + underline for each level)
    ========================================================= */
@@ -291,7 +289,6 @@ strong::after {
   }
 }
 
-
 /* =========================================================
    1) Sidebar / TOC highlight (Material)
    ========================================================= */
@@ -360,17 +357,18 @@ strong::after {
   line-height: 1.45;
 }
 
-
 /* =========================================
    MkDocs Material - Table polish
    1) 文字不要離邊線太遠（縮小 padding）
    2) 交錯底色 + 標題列凸顯
    ========================================= */
 
-/* 表格整體：邊框更一致、不要太鬆 */
+/* 表格不要強制滿寬，改由內容決定 */
 .md-typeset__table table {
   border-collapse: collapse;
-  width: 100%;
+  width: auto !important; /* 不撐滿 */
+  max-width: none !important; /* 不限制 */
+  table-layout: auto; /* 依內容算欄寬 */
 }
 
 /* 1) 文字離邊線不要太遠：調小 td/th padding */
@@ -447,6 +445,6 @@ strong::after {
 
 .md-nav--secondary .md-nav__link,
 .md-nav--secondary .md-nav__link .md-ellipsis {
-  font-size: 0.55rem;   /* 原本約 0.9~1rem */
+  font-size: 0.55rem; /* 原本約 0.9~1rem */
   line-height: 1.45;
 }
